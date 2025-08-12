@@ -2,38 +2,111 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>My Books • [Your Name]</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>My Books • Your Name</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet" />
   <style>
-    body { font-family: 'Poppins', sans-serif; background: #fff0f6; color: #333; margin: 0; padding: 20px; }
-    header { max-width: 900px; margin: 0 auto 20px; }
-    h1 { color: #d6336c; margin-bottom: 6px; }
-    p.lead { color: #6b6b6b; margin-top: 0; }
-    .container { max-width: 900px; margin: 0 auto; display: grid; gap: 18px; }
-    .card { background: white; border-radius: 12px; padding: 16px; box-shadow: 0 6px 18px rgba(0,0,0,0.06); }
-    iframe { width: 100%; border: 0; border-radius: 8px; }
+    /* Background with subtle pink geometric pattern */
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 20px;
+      background: #fff0f6;
+      background-image:
+        radial-gradient(circle at 10% 10%, rgba(214, 51, 108, 0.05) 2px, transparent 3px),
+        radial-gradient(circle at 80% 20%, rgba(214, 51, 108, 0.05) 2px, transparent 3px),
+        radial-gradient(circle at 50% 80%, rgba(214, 51, 108, 0.05) 2px, transparent 3px);
+      background-repeat: repeat;
+      background-size: 100px 100px;
+      color: #333;
+    }
+
+    header {
+      max-width: 900px;
+      margin: 0 auto 20px;
+    }
+
+    h1 {
+      color: #d6336c;
+      margin-bottom: 6px;
+      font-weight: 600;
+      font-size: 2.5rem;
+    }
+
+    p.lead {
+      color: #6b6b6b;
+      margin-top: 0;
+      font-weight: 300;
+      font-size: 1.1rem;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      display: grid;
+      gap: 18px;
+      grid-template-columns: 1fr;
+    }
+
+    .card {
+      background: white;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+    }
+
+    .card h3 {
+      margin-top: 0;
+      font-weight: 600;
+      color: #d6336c;
+    }
+
+    iframe {
+      width: 100%;
+      border: 0;
+      border-radius: 8px;
+      min-height: 400px;
+    }
+
+    /* Responsive adjustments */
+    @media(min-width: 768px) {
+      .container {
+        grid-template-columns: 1fr 1fr;
+      }
+      iframe {
+        min-height: 600px;
+      }
+    }
   </style>
 </head>
 <body>
   <header>
     <h1>My Books — Share & Track</h1>
-    <p class="lead">A corner to keep track of my reading — and for you to add yours too! </p>
+    <p class="lead">A corner to keep track of my reading — and for you to add yours too!</p>
   </header>
 
   <main class="container">
     <section class="card">
       <h3>Add a Book</h3>
-      <!-- Embed your Google Form here -->
-      <iframe src="<iframe src="https://docs.google.com/forms/d/e/1FAIpQLScIi7d0i7tlsMcwA900vb5ei9OfeVAr7uHVxPaecNoA8Y0R_w/viewform?embedded=true" width="640" height="1150" frameborder="0" marginheight="0" marginwidth="0">Chargement en cours…</iframe>
-" height="600"></iframe>
+      <!-- Correct Google Form iframe embed -->
+      <iframe
+        src="https://docs.google.com/forms/d/e/1FAIpQLScIi7d0i7tlsMcwA900vb5ei9OfeVAr7uHVxPaecNoA8Y0R_w/viewform?embedded=true"
+        height="650"
+        loading="lazy"
+        title="Book Submission Form"
+      ></iframe>
     </section>
 
     <section class="card">
       <h3>Book List (Live Updates)</h3>
-      <!-- Embed the published Google Sheet here -->
-      <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ12EfPzlxWmYS1TmiQjfra1Dl3BITuE7wDclOi5drukyJgvaG1CIL4sPMnLYXhi5PtchUB0GQbHuL1/pubhtml?gid=1706269359&single=true" height="400"></iframe>
+      <iframe
+        src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ12EfPzlxWmYS1TmiQjfra1Dl3BITuE7wDclOi5drukyJgvaG1CIL4sPMnLYXhi5PtchUB0GQbHuL1/pubhtml?gid=1706269359&single=true"
+        height="450"
+        loading="lazy"
+        title="Book List Spreadsheet"
+      ></iframe>
     </section>
   </main>
 </body>
 </html>
+
