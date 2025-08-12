@@ -2,107 +2,136 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>My Books • Your Name</title>
+  <title>My Books • Marame</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet" />
   <style>
     /* Background with subtle pink geometric pattern */
-body {
-  font-family: 'Poppins', sans-serif;
-  margin: 0;
-  padding: 20px;
-  background: linear-gradient(135deg, #ffe6f0 25%, #ffd1e6 75%);
-  color: #333;
-  background-image:
-    radial-gradient(circle at 10% 10%, rgba(214, 51, 108, 0.05) 2px, transparent 3px),
-    radial-gradient(circle at 80% 20%, rgba(214, 51, 108, 0.05) 2px, transparent 3px),
-    radial-gradient(circle at 50% 80%, rgba(214, 51, 108, 0.05) 2px, transparent 3px);
-  background-repeat: repeat;
-  background-size: 100px 100px;
-}
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 20px;
+      background: linear-gradient(135deg, #ffe6f0 25%, #ffd1e6 75%);
+      color: #333;
+      background-image:
+        radial-gradient(circle at 10% 10%, rgba(214, 51, 108, 0.05) 2px, transparent 3px),
+        radial-gradient(circle at 80% 20%, rgba(214, 51, 108, 0.05) 2px, transparent 3px),
+        radial-gradient(circle at 50% 80%, rgba(214, 51, 108, 0.05) 2px, transparent 3px);
+      background-repeat: repeat;
+      background-size: 100px 100px;
+    }
 
-header {
-  max-width: 900px;
-  margin: 0 auto 20px;
-  position: sticky;
-  top: 0;
-  background: #fff0f6;
-  padding: 20px 0;
-  box-shadow: 0 2px 5px rgba(214, 51, 108, 0.1);
-  z-index: 100;
-}
+    header {
+      max-width: 900px;
+      margin: 0 auto 20px;
+      position: sticky;
+      top: 0;
+      background: #fff0f6;
+      padding: 20px 0;
+      box-shadow: 0 2px 5px rgba(214, 51, 108, 0.1);
+      z-index: 100;
+    }
 
-h1 {
-  color: #d6336c;
-  margin-bottom: 6px;
-  font-weight: 600;
-  font-size: 2.5rem;
-}
+    h1 {
+      color: #d6336c;
+      margin-bottom: 6px;
+      font-weight: 600;
+      font-size: 2.5rem;
+    }
 
-p.lead {
-  color: #6b6b6b;
-  margin-top: 0;
-  font-weight: 300;
-  font-size: 1.1rem;
-}
+    p.lead {
+      color: #6b6b6b;
+      margin-top: 0;
+      font-weight: 300;
+      font-size: 1.1rem;
+    }
 
-.container {
-  max-width: 900px;
-  margin: 0 auto;
-  display: grid;
-  gap: 18px;
-  grid-template-columns: 1fr;
-}
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      display: grid;
+      gap: 18px;
+      grid-template-columns: 1fr;
+    }
 
-.card {
-  background: white;
-  border-radius: 12px;
-  padding: 20px;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
-  transition: box-shadow 0.3s ease, transform 0.3s ease;
-}
+    .card {
+      background: white;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+    }
 
-.card:hover {
-  box-shadow: 0 10px 25px rgba(214, 51, 108, 0.2);
-  transform: translateY(-4px);
-}
+    .card:hover {
+      box-shadow: 0 10px 25px rgba(214, 51, 108, 0.2);
+      transform: translateY(-4px);
+    }
 
-.card + .card {
-  margin-top: 30px;
-  border-top: 1px solid #f7c6d3;
-  padding-top: 30px;
-}
+    .card + .card {
+      margin-top: 30px;
+      border-top: 1px solid #f7c6d3;
+      padding-top: 30px;
+    }
 
-.card h3 {
-  margin-top: 0;
-  font-weight: 600;
-  color: #d6336c;
-}
+    .card h3 {
+      margin-top: 0;
+      font-weight: 600;
+      color: #d6336c;
+    }
 
-iframe {
-  width: 100%;
-  border: 0;
-  border-radius: 8px;
-  min-height: 400px;
-}
+    form input, form textarea, form button {
+      width: 100%;
+      padding: 10px;
+      margin: 6px 0;
+      border-radius: 8px;
+      border: 1px solid #ddd;
+      font-size: 14px;
+      font-family: 'Poppins', sans-serif;
+    }
 
-/* Responsive */
-@media(min-width: 768px) {
-  .container {
-    grid-template-columns: 1fr 1fr;
-  }
-  iframe {
-    min-height: 600px;
-  }
-}
+    form button {
+      background: #d6336c;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-weight: 600;
+    }
 
-footer {
-  text-align: center;
-  margin: 40px 0 20px;
-  color: #b36b88;
-  font-weight: 300;
-  font-size: 0.9rem;
-}
+    form button:hover {
+      background: #b82a5c;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    th, td {
+      padding: 8px;
+      border-bottom: 1px solid #eee;
+      text-align: left;
+    }
+
+    th {
+      background: #fff0f6;
+      color: #d6336c;
+    }
+
+    /* Responsive */
+    @media(min-width: 768px) {
+      .container {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    footer {
+      text-align: center;
+      margin: 40px 0 20px;
+      color: #b36b88;
+      font-weight: 300;
+      font-size: 0.9rem;
+    }
 
   </style>
 </head>
@@ -115,29 +144,46 @@ footer {
   <main class="container">
     <section class="card">
       <h3>Add a Book</h3>
-      <!-- Correct Google Form iframe embed -->
-      <iframe
-        src="https://docs.google.com/forms/d/e/1FAIpQLScIi7d0i7tlsMcwA900vb5ei9OfeVAr7uHVxPaecNoA8Y0R_w/viewform?embedded=true"
-        height="650"
-        loading="lazy"
-        title="Book Submission Form"
-      ></iframe>
+      <form action="https://formsubmit.co/bentabidou@gmail.com" method="POST">
+        <input type="text" name="Title" placeholder="Book Title" required />
+        <input type="text" name="Author" placeholder="Author" required />
+        <input type="number" name="Rating" placeholder="Rating (1-5)" min="1" max="5" />
+        <input type="date" name="DateRead" />
+        <textarea name="Notes" placeholder="Your thoughts"></textarea>
+        <button type="submit">Add Book</button>
+      </form>
     </section>
 
     <section class="card">
-      <h3>Book List (Live Updates)</h3>
-      <iframe
-        src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ12EfPzlxWmYS1TmiQjfra1Dl3BITuE7wDclOi5drukyJgvaG1CIL4sPMnLYXhi5PtchUB0GQbHuL1/pubhtml?gid=1706269359&single=true"
-        height="450"
-        loading="lazy"
-        title="Book List Spreadsheet"
-      ></iframe>
+      <h3>Book List</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Rating</th>
+            <th>Date Read</th>
+            <th>Notes</th>
+          </tr>
+        </thead>
+        <tbody id="book-list">
+          <!-- Book entries will go here -->
+          <tr>
+            <td>Example Book</td>
+            <td>Jane Doe</td>
+            <td>5</td>
+            <td>2025-08-01</td>
+            <td>Really enjoyed it!</td>
+          </tr>
+        </tbody>
+      </table>
     </section>
   </main>
-  <footer>
-  &copy; 2025 Marame — All rights reserved
-</footer>
 
+  <footer>
+    &copy; 2025 Marame — All rights reserved
+  </footer>
 </body>
 </html>
+
 
