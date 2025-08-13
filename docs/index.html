@@ -19,6 +19,12 @@
         radial-gradient(circle at 50% 80%, rgba(214, 51, 108, 0.05) 2px, transparent 3px);
       background-repeat: repeat;
       background-size: 100px 100px;
+      opacity: 0;
+      animation: fadeIn 1s forwards;
+    }
+
+    @keyframes fadeIn {
+      to { opacity: 1; }
     }
 
     header {
@@ -30,6 +36,16 @@
       padding: 20px 0;
       box-shadow: 0 2px 5px rgba(214, 51, 108, 0.1);
       z-index: 100;
+      animation: slideDown 0.6s ease forwards;
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+
+    @keyframes slideDown {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     h1 {
@@ -95,6 +111,7 @@
       border: none;
       cursor: pointer;
       font-weight: 600;
+      transition: background-color 0.3s ease;
     }
 
     form button:hover {
@@ -133,6 +150,22 @@
       font-size: 0.9rem;
     }
 
+    /* Filter controls styling */
+    .filter-group {
+      margin-bottom: 10px;
+    }
+    .filter-group label {
+      margin-right: 8px;
+      font-weight: 600;
+      color: #d6336c;
+    }
+    .filter-group select {
+      padding: 6px 10px;
+      border-radius: 6px;
+      border: 1px solid #ddd;
+      font-size: 14px;
+      font-family: 'Poppins', sans-serif;
+    }
   </style>
 </head>
 <body>
@@ -156,6 +189,24 @@
 
     <section class="card">
       <h3>Book List</h3>
+      <div class="filter-group">
+        <label for="filter-author">Filter by author:</label>
+        <select id="filter-author">
+          <option value="all">All</option>
+          <option value="jane doe">Jane Doe</option>
+          <option value="john smith">John Smith</option>
+          <!-- Add more authors here -->
+        </select>
+
+        <label for="filter-rating" style="margin-left: 15px;">Filter by rating:</label>
+        <select id="filter-rating">
+          <option value="all">All</option>
+          <option value="5">5 stars</option>
+          <option value="4">4 stars & up</option>
+          <option value="3">3 stars & up</option>
+        </select>
+      </div>
+
       <table>
         <thead>
           <tr>
@@ -167,13 +218,19 @@
           </tr>
         </thead>
         <tbody id="book-list">
-          <!-- Book entries will go here -->
           <tr>
             <td>Example Book</td>
             <td>Jane Doe</td>
             <td>5</td>
             <td>2025-08-01</td>
             <td>Really enjoyed it!</td>
+          </tr>
+          <tr>
+            <td>Another Book</td>
+            <td>John Smith</td>
+            <td>4</td>
+            <td>2025-07-20</td>
+            <td>Good read</td>
           </tr>
         </tbody>
       </table>
@@ -183,7 +240,47 @@
   <footer>
     &copy; 2025 Marame — All rights reserved
   </footer>
+
+  <script>
+    const filterAuthor = document.getElementById('filter-author');
+    const filterRating = document.getElementById('filter-rating');
+    const bookList = document.getElementById('book-list');
+
+    function filterBooks() {
+      const author = filterAuthor.value.toLowerCase();
+      const rating = filterRating.value;
+      const rows = bookList.getElementsByTagName('tr');
+
+      for (let row of rows) {
+        const rowAuthor = row.cells[1].textContent.toLowerCase();
+        const rowRating = parseInt(row.cells[2].textContent, 10);
+
+        let authorMatch = author === 'all' || rowAuthor === author;
+        let ratingMatch = false;
+
+        if (rating === 'all') {
+          ratingMatch = true;
+        } else if (rating === '5') {
+          ratingMatch = rowRating === 5;
+        } else if (rating === '4') {
+          ratingMatch = rowRating >= 4;
+        } else if (rating === '3') {
+          ratingMatch = rowRating >= 3;
+        }
+
+        if (authorMatch && ratingMatch) {
+          row.style.display = '';
+        } else {
+          row.style.display = 'none';
+        }
+      }
+    }
+
+    filterAuthor.addEventListener('change', filterBooks);
+    filterRating.addEventListener('change', filterBooks);
+  </script>
 </body>
 </html>
+
 
 
