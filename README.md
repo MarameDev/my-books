@@ -3,6 +3,16 @@
 This is a simple, minimalist pink-themed website to share and track books you’ve read.  
 Users can submit book info via a form, and see a live-updating list with filtering options.
 
+## How It Works
+
+- Visitors can submit books using the form.  
+- Each submission is sent directly to my email via FormSubmit.co.  
+- New book entries don’t show up on the website automatically.  
+- I manually update the book list on the site based on submissions I receive.  
+
+This keeps the site simple and easy to maintain without needing complex backend or databases.
+Feel free to submit your favorite books and check :)
+
 ## Features
 
 - Submit books with title, author, rating, date read, and notes.
