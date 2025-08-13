@@ -45,5 +45,4 @@ Feel free to submit your favorite books and check :)
 
 ---
 
-© 2025 Marame  
-Feel free to explore and contribute!
+mrie
